@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:wicket>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>My Site</title>
+</head>
+<body>
+<div id="overlay_div" class="overlay">
+            <h1>Can't touch this</h1>
+</div>
+	<div id="header">
+		<span>My Site</span>
+	</div>
+
+	<div id="menu">
+		<nav>
+		<ul class="menuH decor1">
+			<li><a href="#" wicket:id="homeLink">Home</a></li>
+			<div wicket:id="adminLinkContainer">
+				<li><a href="#" wicket:id="adminLink" class="arrow">Admin</a>
+					<ul>
+						<li><a href="#" wicket:id="addArticleLink">Add Article</a></li>
+						<li><a href="#" wicket:id="uploadQuestionsLink">Upload Questions</a></li>
+						<li><a href="#" wicket:id="answerQuestionsLink">Answer Questions</a></li>
+					</ul>
+				</li>
+			</div>
+			<li><a href="#" wicket:id="articleLink">Articles</a></li>
+			<li><a href="#" wicket:id="interviewQuestionsLink">Interview Questions</a></li>
+			<li><a href="#" wicket:id="forumLink">Forum</a></li>
+			<div wicket:id="loginContainer">
+				<li>
+					<a href="#" wicket:id="signInLink">Sign In</a>
+					<a href="#" wicket:id="signOutLink">Sign Out</a>
+				</li>
+			</div>
+			<li><a href="#" wicket:id="contactUsLink">Contact Us</a></li>
+		</ul>
+		</nav>
+	</div>
+
+	<div id="content">
+		<wicket:child />
+	</div>
+
+	<div id="footer">
+		<span wicket:id="footerMessage">Footer</span>
+	</div>
+	<span wicket:id="messageWindow"></span>
+</body>
+</html>
