@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+  <definition name="baseLayout" template="/Tiles/Layout.jsp">
+      <put-attribute name="title"  value=""/>
+      <put-attribute name="header" value="/Tiles/Header.jsp"/>
+      <put-attribute name="menu"   value="/Tiles/Menu.jsp"/>
+      <put-attribute name="body"   value="/Tiles/Body.jsp"/>
+      <put-attribute name="footer" value="/Tiles/Footer.jsp"/>
+  </definition>
+  
+   <definition name="employeeLayout" template="/Tiles/Layout.jsp">
+      <put-attribute name="title"  value=""/>
+      <put-attribute name="header" value="/Tiles/Header.jsp"/>
+      <put-attribute name="menu"   value="/JSP/Links.jsp"/>
+      <put-attribute name="body"   value="/Tiles/Body.jsp"/>
+      <put-attribute name="footer" value="/Tiles/Footer.jsp"/>
+  </definition>
+  
+  <definition name="Home" extends="baseLayout">
+      <put-attribute name="title"  value="Login"/>
+      <put-attribute name="body"   value="/JSP/Login.jsp"/>      
+  </definition>
+  <definition name="Success" extends="employeeLayout">
+      <put-attribute name="title"  value="Employee Operations"/>
+      <put-attribute name="body"   value="/JSP/Employee_Home.jsp"/>      
+  </definition>
+   <definition name="showEmployees" extends="employeeLayout">
+      <put-attribute name="title"  value="Employee Operations"/>
+      <put-attribute name="body"   value="/JSP/Employee_View_All.jsp"/>      
+  </definition>
+  <definition name="showAddEmployee" extends="employeeLayout">
+      <put-attribute name="title"  value="Employee Operations"/>
+      <put-attribute name="body"   value="/JSP/Employee_Add.jsp"/>      
+  </definition>
+   <definition name="showViewEmployee" extends="employeeLayout">
+      <put-attribute name="title"  value="Employee Operations"/>
+      <put-attribute name="body"   value="/JSP/Employee_View.jsp"/>      
+  </definition>
+  <definition name="showSearchEmployee" extends="employeeLayout">
+      <put-attribute name="title"  value="Employee Operations"/>
+      <put-attribute name="body"   value="/JSP/Employee_Search.jsp"/>      
+  </definition>
+   <definition name="showDeleteEmployee" extends="employeeLayout">
+      <put-attribute name="title"  value="Employee Operations"/>
+      <put-attribute name="body"   value="/JSP/Employee_Delete.jsp"/>      
+  </definition>
+   <definition name="showUpdateEmployee" extends="employeeLayout">
+      <put-attribute name="title"  value="Employee Operations"/>
+      <put-attribute name="body"   value="/JSP/Employee_Update.jsp"/>      
+  </definition>
+  
+  
+</tiles-definitions>
