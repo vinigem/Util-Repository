@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
+	xmlns:wicket="http://wicket.apache.org/dtds.data/wicket-xhtml1.4-strict.dtd">
+<wicket:extend>
+<center>
+<span wicket:id="title" class="title" ></span>
+<span style="font-size: large; color: red; margin-left: 200px; font-weight: bold;">Time Left:<span wicket:id="timer" style="margin-left: 5px; color: red;"></span></span>
+</center>
+<!--<a href="#"  wicket:id="calc">Calc</a>
+--><form wicket:id="form">
+<table id="table">
+<tr height="400px"><td width="70%">
+<div wicket:id="container" id="surveyContainer">
+
+<div wicket:id="questionContainer" id="questionContainer">
+<span wicket:id="question">Question</span>
+</div>
+
+<div wicket:id="optionContainer" id="optionContainer">
+<span wicket:id="options">Options</span>
+</div>
+
+</div>
+</td>
+<td width="20%" >
+<div wicket:id="sideContainer" id="sideContainer">
+
+<div wicket:id="questListView">
+<a href="#" wicket:id="button" class="button">
+<span wicket:id="index">index</span>
+</a>
+</div>
+</div>
+</td></tr></table>
+
+<div wicket:id="buttonContainer" id="buttonContainer">
+<a href="#" wicket:id="back" class="button" style="position: absolute; margin-left: 50px;">Prev</a>
+<a href="#" wicket:id="next" class="button" style="position: absolute; margin-left: 170px;">Next</a>
+<a href="#" wicket:id="submit" style="margin-left:500px; position: absolute; margin-left: 600px;" class="button" >Submit</a>
+</div>
+
+</form>
+
+</wicket:extend>
+</html>
+
