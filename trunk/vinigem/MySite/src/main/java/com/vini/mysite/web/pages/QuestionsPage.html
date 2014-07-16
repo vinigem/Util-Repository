@@ -1,0 +1,35 @@
+<wicket:extend>
+<fieldset>
+	<legend><b>Search Questions</b></legend>
+	<form style="height: 400px;" wicket:id="form">
+		<div id="searchContainer">
+			<label>Search By Category : </label>
+			<select wicket:id="category"></select>
+			<label>Search By Texts : </label>
+			<input type="text" wicket:id="texts" />
+		</div>
+		
+		<br />
+		<div wicket:id="container" style="padding: 0px 30px; margin: auto;">
+			<table>
+				<tr wicket:id="questionView">
+					<ul>
+						<td>
+							<li>
+								<span wicket:id="question"></span>
+							</li>
+								<a wicket:id="answer">Answer</a>
+						</td>
+					</ul>
+				</tr>
+			<tfoot>
+				<tr>
+				<td wicket:id="navigator"></td>
+				</tr>
+			</tfoot>
+			</table>
+		</div>
+	</form>
+	</fieldset>
+	<span wicket:id="answerWindow"></span>
+</wicket:extend>
