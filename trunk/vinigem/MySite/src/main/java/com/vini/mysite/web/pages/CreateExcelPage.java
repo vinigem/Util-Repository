@@ -28,12 +28,16 @@ public class CreateExcelPage extends BasePage {
 	private AjaxLink<Void> addRowLink;
 	private AjaxLink<Void> addColLink;
 	private DownloadLink exportLink;
+	private List<ArrayList<String>> rows;
+	private int COL_COUNTER = 1;
+	private int ROW_COUNTER = 1;
 
 	public CreateExcelPage() {
+		initExcel();
 		excelContainer = new WebMarkupContainer("excelContainer");
 		excelContainer.setOutputMarkupId(true);
 
-		excelListView = new PageableListView<ArrayList<String>>("rows", new ArrayList<ArrayList<String>>(),5) {
+		excelListView = new PageableListView<ArrayList<String>>("rows", rows,15) {
 			private static final long serialVersionUID = 1L;
 
 			@Override
@@ -75,11 +79,17 @@ public class CreateExcelPage extends BasePage {
 				if(excelList.size() > 0){
 					List<String> newRow = new ArrayList<String>();
 					for(int index = 1; index <= excelList.get(0).size(); index++){
-						newRow.add("Row"+(excelList.size()+1) +"Column"+index);
+						if(index == 1){
+							newRow.add(String.valueOf(ROW_COUNTER));
+							ROW_COUNTER++;
+						}else{
+						newRow.add("R"+(excelList.size()+1) +"C"+index);
+						}
 					}
 					excelList.add(excelList.size(), (ArrayList<String>) newRow);
 				}else{
-					excelList.add(new ArrayList<String>(Arrays.asList("Row1 Column1")));
+					excelList.add(new ArrayList<String>(Arrays.asList(String.valueOf(ROW_COUNTER))));
+					ROW_COUNTER++;
 				}
 				target.addComponent(excelContainer);
 			}
@@ -93,14 +103,21 @@ public class CreateExcelPage extends BasePage {
 				if(excelListView.getModelObject().size() > 0){
 					for(int index =1 ; index <= excelListView.getModelObject().size(); index++){
 						List<String> rowList = excelListView.getModelObject().get(index-1); 	
-						if(rowList.size() > 0 ){
-							rowList.add(rowList.size(), "Row"+index+" Column"+(rowList.size()+1));
+						if(index == 1 ){
+							if(COL_COUNTER < 26){
+								char col = (char) (COL_COUNTER+65);
+								rowList.add(rowList.size(), String.valueOf(col));
+								COL_COUNTER++;
+							}else{
+								char colPrefix = (char) ((COL_COUNTER / 26)+65-1);
+								char colSuffix = (char) ((COL_COUNTER % 26)+65);
+								rowList.add(rowList.size(), String.valueOf(colPrefix+""+colSuffix));
+								COL_COUNTER++;
+							}
 						}else{
-							rowList.add("Row"+index+" Column1");
+							rowList.add(rowList.size(), "R"+index+" C"+(rowList.size()+1));
 						}
 					}
-				}else{
-					excelListView.getModelObject().add(new ArrayList<String>(Arrays.asList("Row1 Column1")));
 				}
 				target.addComponent(excelContainer);
 			}
@@ -119,6 +136,14 @@ public class CreateExcelPage extends BasePage {
 		add(addRowLink);
 		add(addColLink);
 		add(exportLink);
+	}
+
+	private void initExcel() {
+		rows = new ArrayList<ArrayList<String>>();
+		ArrayList<String> headerRow = new ArrayList<String>();
+		headerRow.add("");//Left Corner Empty cell
+		headerRow.add("A");
+		rows.add(headerRow);
 	}
 
 }
