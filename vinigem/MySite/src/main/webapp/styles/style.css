@@ -73,7 +73,7 @@ legend {
 	margin-left: 50px;
 }
 
-#searchContainer select,input {
+#searchContainer select,#signInContainer input {
 	display: inline;
 	width: auto;
 	margin-right: 50px;
@@ -88,7 +88,7 @@ legend {
 	text-align: center;
 }
 
-#signInContainer label,input {
+#signInContainer label,#signInContainer input {
 	display: inline-block;
 	width: 100px;
 	padding: 5px 5px;
@@ -110,6 +110,11 @@ legend {
 	border: 1px solid #25729a;
 	padding: 5px;
 }
+.cells{
+	text-align: center;
+	width: 70px; 
+	display: inline-block;
+	}
 
 .rounded-corners-blue {
 	min-width: 75px;
