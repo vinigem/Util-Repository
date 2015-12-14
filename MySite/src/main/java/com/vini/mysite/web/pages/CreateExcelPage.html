@@ -1,0 +1,17 @@
+<wicket:extend>
+	<fieldset><legend><b>Create Excel</b></legend>
+	<div style="width: 1200px; overflow: hidden; height: 500px; display: table;">
+		<div wicket:id="excelContainer" style="overflow:scroll; width: inherit;">
+			<table style="table-layout: fixed;">
+				<tr wicket:id="rows">
+					<td wicket:id="cols"><input wicket:id="column" type="text" class="cells"/></td>
+				</tr>
+			</table>
+			<div style="text-align: center;"><span wicket:id="navigator"></span>
+			</div>
+		</div>
+	</div>
+	<a href="#" wicket:id="addRow">Add Row</a>&nbsp;&nbsp;
+	<a href="#" wicket:id="addCol">Add Column</a>&nbsp;&nbsp;
+	<a href="#"	wicket:id="export">Export</a></fieldset>
+</wicket:extend>

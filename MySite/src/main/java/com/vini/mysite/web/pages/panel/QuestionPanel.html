@@ -1,0 +1,25 @@
+<wicket:panel>
+	<div id="questionContainer">
+		<form wicket:id="form">
+		<table width="90%">
+			<tr>
+				<td><label>Title:</label></td>
+				<td><textarea wicket:id="title" rows="1" cols="55" style="height: 25px;"></textarea></td>
+			</tr>
+			<tr>
+				<td><label>Category:</label></td>
+				<td><input wicket:id="category" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><label>Description</label></td>
+			</tr>
+			<tr>
+				<td colspan="2"><textarea wicket:id="description" rows="8" cols="70"></textarea></td>
+			</tr>
+			<tr style="text-align: center;">
+				<td colspan="2"><a href="#" wicket:id="post" class="rounded-corners-blue">Post</a></td>
+			</tr>
+		</table>
+		</form>
+	</div>
+</wicket:panel>
